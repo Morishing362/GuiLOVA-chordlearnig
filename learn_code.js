@@ -42,9 +42,17 @@ const clovaSkillHandler = clova.Client
           break
         }
         // 「中吉」だと「なかよし」発生されてしまう
-        const how_to = ["0、3、2、0、1、0", "ミュート、0、0、2、3、2", "ミュート、0、2、0、1、0"]
-        const codes = ["C", "D", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
-        if (codes.indexOf(slots.code_names) != -1){
+        const how_to = [
+          "0、3、2、0、1、0",
+          "ミュート、ミュート、0、2、3、2",
+          "0、2、2、1、0、0",
+          "1、3、3、2、1、1",
+          "3、2、0、0、0、3",
+          "ミュート、0、3、3、3、0",
+          "ミュート、2、4、4、4、2",
+          "ミュート、0、2、2、1、0"
+        ]
+        const codes = ["C", "D", "E", "F", "G", "A", "B", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
         const my_output = how_to[codes.indexOf(slots.code_names)]
 
         speech = {
@@ -54,14 +62,11 @@ const clovaSkillHandler = clova.Client
         }
         responseHelper.setSimpleSpeech(speech)
         responseHelper.setSimpleSpeech(speech, true)
-
-      }else{
-
         //音声の場所
         responseHelper.setSimpleSpeech(
-          clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/1.mp3')
+          clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
         );
-      }
+
         break;
       // ビルトインインテント。ユーザーによるインプットが使い方のリクエストと判別された場合
       case 'Clova.GuideIntent':
