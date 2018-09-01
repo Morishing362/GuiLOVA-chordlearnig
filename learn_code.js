@@ -58,7 +58,7 @@ const clovaSkillHandler = clova.Client
         const speechArry = [{
           lang: 'ja',
           type: 'PlainText',
-          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+          value: `押さえ方は${my_output}です。`
         },
         clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
       ]
