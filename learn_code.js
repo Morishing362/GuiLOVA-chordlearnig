@@ -55,21 +55,28 @@ const clovaSkillHandler = clova.Client
         const codes = ["C", "D", "E", "F", "G", "A", "B", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
         const my_output = how_to[codes.indexOf(slots.code_names)]
 
-
-        responseHelper.setSimpleSpeech({
+        const speechArry = [{
           lang: 'ja',
           type: 'PlainText',
           value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
-        })
-        responseHelper.setSimpleSpeech({
-          lang: 'ja',
-          type: 'PlainText',
-          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
-        }, true)
-        //音声の場所
-        responseHelper.setSimpleSpeech(
-          clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
-        );
+        },
+        clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
+      ]
+        responseHelper.setSpeechList(speechArry)
+        // responseHelper.setSimpleSpeech({
+        //   lang: 'ja',
+        //   type: 'PlainText',
+        //   value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+        // })
+        // responseHelper.setSimpleSpeech({
+        //   lang: 'ja',
+        //   type: 'PlainText',
+        //   value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+        // }, true)
+        // //音声の場所
+        // responseHelper.setSimpleSpeech(
+        //   clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
+        // );
 
         break;
       // ビルトインインテント。ユーザーによるインプットが使い方のリクエストと判別された場合
