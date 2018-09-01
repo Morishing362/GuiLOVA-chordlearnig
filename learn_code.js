@@ -44,19 +44,24 @@ const clovaSkillHandler = clova.Client
         // 「中吉」だと「なかよし」発生されてしまう
         const how_to = ["0、3、2、0、1、0", "ミュート、0、0、2、3、2", "ミュート、0、2、0、1、0"]
         const codes = ["C", "D", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
-        const my_output = how_to[codes.indexOf(slots.code_names)]
+        if (codes.indexOf(slots.code_names) >= 0){
+          const my_output = how_to[codes.indexOf(slots.code_names)]
 
-        speech = {
-          lang: 'ja',
-          type: 'PlainText',
-          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
-        }
-        responseHelper.setSimpleSpeech(speech)
-        responseHelper.setSimpleSpeech(speech, true
-
-          
+          speech = {
+            lang: 'ja',
+            type: 'PlainText',
+            value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+          }
+          responseHelper.setSimpleSpeech(speech)
+          responseHelper.setSimpleSpeech(speech, true)
+            break;
+        }else{
+        // responseHelper.setSimpleSpeech(
+          clova.SpeechBuilder.createSpeechUrl('mp3/1.mp3')
+        );
 
         break;
+      }
       // ビルトインインテント。ユーザーによるインプットが使い方のリクエストと判別された場合
       case 'Clova.GuideIntent':
         speech = {
