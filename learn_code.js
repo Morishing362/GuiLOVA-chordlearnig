@@ -53,7 +53,7 @@ const clovaSkillHandler = clova.Client
           value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
         }
         responseHelper.setSimpleSpeech(speech)
-        responseHelper.setSimpleSpeech(speech, true
+        responseHelper.setSimpleSpeech(speech, true)
           break;
         }else{
         console.log("read")
