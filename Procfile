@@ -1,1 +1,1 @@
-web: node learn_code.js
+web: node index.js
