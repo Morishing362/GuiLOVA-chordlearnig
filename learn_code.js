@@ -56,9 +56,9 @@ const clovaSkillHandler = clova.Client
         responseHelper.setSimpleSpeech(speech, true
           break;
         }else{
-
-        responseHelper.setSimpleSpeech(
-          clova.SpeechBuilder.createSpeechUrl('mp3/1.mp3')
+        console.log("read")
+        // responseHelper.setSimpleSpeech(
+        //   clova.SpeechBuilder.createSpeechUrl('mp3/1.mp3')
         );
 
         break;
