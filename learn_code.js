@@ -55,13 +55,17 @@ const clovaSkillHandler = clova.Client
         const codes = ["C", "D", "E", "F", "G", "A", "B", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
         const my_output = how_to[codes.indexOf(slots.code_names)]
 
-        speech = {
+
+        responseHelper.setSimpleSpeech({
           lang: 'ja',
           type: 'PlainText',
-          value: `${codes.indexOf(slots.code_names)}押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
-        }
-        responseHelper.setSimpleSpeech(speech)
-        responseHelper.setSimpleSpeech(speech, true)
+          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+        })
+        responseHelper.setSimpleSpeech({
+          lang: 'ja',
+          type: 'PlainText',
+          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+        }, true)
         //音声の場所
         responseHelper.setSimpleSpeech(
           clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/' + slots.code_names + '.mp3')
