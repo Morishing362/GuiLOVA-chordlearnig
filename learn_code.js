@@ -59,7 +59,7 @@ const clovaSkillHandler = clova.Client
 
         //音声の場所
         responseHelper.setSimpleSpeech(
-          clova.SpeechBuilder.createSpeechUrl('./mp3/1.mp3')
+          clova.SpeechBuilder.createSpeechUrl('https://hackason1.herokuapp.com/1.mp3')
         );
       }
         break;
@@ -93,6 +93,7 @@ const clovaSkillHandler = clova.Client
   .handle();
 
 const app = new express();
+app.use(express.static("mp3"));
 //TODO
 // リクエストの検証を行う場合。環境変数APPLICATION_ID(値はClova Developer Center上で入力したExtension ID)が必須
 const clovaMiddleware = clova.Middleware({
