@@ -50,11 +50,11 @@ const clovaSkillHandler = clova.Client
         speech = {
           lang: 'ja',
           type: 'PlainText',
-          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+          value: `${codes.indexOf(slots.code_names)}押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
         }
         responseHelper.setSimpleSpeech(speech)
         responseHelper.setSimpleSpeech(speech, true)
-        
+
         }
 
         //音声の場所
