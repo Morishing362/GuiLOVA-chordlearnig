@@ -44,7 +44,7 @@ const clovaSkillHandler = clova.Client
         // 「中吉」だと「なかよし」発生されてしまう
         const how_to = ["0、3、2、0、1、0","ミュート、0、0、2、3、2"]
         const codes = ["C", "D"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
-        const my_output = how_to[codes.indexOf(slots.codes)]
+        const my_output = how_to[codes.indexOf(slots.code_names)]
 
         speech = {
           lang: 'ja',
