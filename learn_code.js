@@ -59,7 +59,7 @@ const clovaSkillHandler = clova.Client
 
         //音声の場所
         responseHelper.setSimpleSpeech(
-          clova.SpeechBuilder.createSpeechUrl('https://perezhilton.com/wp-content/uploads/2010/07/teenagedream.mp3')
+          clova.SpeechBuilder.createSpeechUrl('./mp3/1.mp3')
         );
       }
         break;
