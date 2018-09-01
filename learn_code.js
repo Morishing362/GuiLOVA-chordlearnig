@@ -25,7 +25,7 @@ const clovaSkillHandler = clova.Client
         // 星座を取得
         const slots = responseHelper.getSlots()
         // Slotに登録されていない星座はnullになる
-        if(slots.zodiac_signs == null) {
+        if(slots.code_names == null) {
           speech = {
             lang: 'ja',
             type: 'PlainText',
@@ -42,8 +42,8 @@ const clovaSkillHandler = clova.Client
           break
         }
         // 「中吉」だと「なかよし」発生されてしまう
-        const how_to = ["0、3、2、0、1、0","ミュート、0、0、2、3、2"]
-        const codes = ["C", "D"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
+        const how_to = ["0、3、2、0、1、0", "ミュート、0、0、2、3、2", "ミュート、0、2、0、1、0"]
+        const codes = ["C", "D", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
         const my_output = how_to[codes.indexOf(slots.code_names)]
 
         speech = {
