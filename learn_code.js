@@ -47,16 +47,15 @@ const clovaSkillHandler = clova.Client
         if (codes.indexOf(slots.code_names) >= 0){
           const my_output = how_to[codes.indexOf(slots.code_names)]
 
-        speech = {
-          lang: 'ja',
-          type: 'PlainText',
-          value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
-        }
-        responseHelper.setSimpleSpeech(speech)
-        responseHelper.setSimpleSpeech(speech, true)
-          break;
+          speech = {
+            lang: 'ja',
+            type: 'PlainText',
+            value: `押さえ方は${my_output}です。${TEMPLATE_INQUIRY}`
+          }
+          responseHelper.setSimpleSpeech(speech)
+          responseHelper.setSimpleSpeech(speech, true)
+            break;
         }else{
-        console.log("read")
         // responseHelper.setSimpleSpeech(
         //   clova.SpeechBuilder.createSpeechUrl('mp3/1.mp3')
         );
