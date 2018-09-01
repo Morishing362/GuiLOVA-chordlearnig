@@ -55,13 +55,13 @@ const clovaSkillHandler = clova.Client
         responseHelper.setSimpleSpeech(speech)
         responseHelper.setSimpleSpeech(speech, true)
 
-        }
+      }else{
 
         //音声の場所
-        // responseHelper.setSimpleSpeech(
-        //   clova.SpeechBuilder.createSpeechUrl('https://exsample.com/myaudio.mp3')
-        // );
-
+        responseHelper.setSimpleSpeech(
+          clova.SpeechBuilder.createSpeechUrl('mp3/1.mp3')
+        );
+      }
         break;
       // ビルトインインテント。ユーザーによるインプットが使い方のリクエストと判別された場合
       case 'Clova.GuideIntent':
