@@ -50,9 +50,10 @@ const clovaSkillHandler = clova.Client
           "3。2。0。0。0。3",
           "ミュート。0。3。3。3。0",
           "ミュート。2。4。4。4。2",
-          "ミュート。0。2。2。1。0"
+          "ミュート。0。2。2。1。0",
+          "ミュート。ミュート。4。3。2。4"
         ]
-        const codes = ["C", "D", "E", "F", "G", "A", "B", "Am"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
+        const codes = ["C", "D", "E", "F", "G", "A", "B", "Am", "Fsadd9"]       // 日と星座を元に運勢を決定。日が変わると違う運勢に。
         const my_output = how_to[codes.indexOf(slots.code_names)]
 
         const speechArry = [{
