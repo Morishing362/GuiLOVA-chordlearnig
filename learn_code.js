@@ -12,7 +12,7 @@ const clovaSkillHandler = clova.Client
     responseHelper.setSimpleSpeech({
       lang: 'ja',
       type: 'PlainText',
-      value: `「コードラーニング」が起動されました。${TEMPLATE_INQUIRY}`,
+      value: `「ギターコード」が起動されました。${TEMPLATE_INQUIRY}`,
     });
   })
   // カスタムインテント or ビルトインインテント
@@ -43,7 +43,7 @@ const clovaSkillHandler = clova.Client
         }
         // 「中吉」だと「なかよし」発生されてしまう
         const how_to = [
-          "0。3。2。0。1。0",
+          "ミュート。3。2。0。1。0",
           "ミュート。ミュート。0。2。3。2",
           "0。2。2。1。0。0",
           "1。3。3。2。1。1",
